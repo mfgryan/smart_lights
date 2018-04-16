@@ -1,0 +1,12 @@
+#!/bin/bash
+
+SCRIPT_HOME="."
+source ${SCRIPT_HOME}/setupEnv
+
+if [ -z "$1" ]; then
+    echo "please give a schedule id"
+    exit 0
+fi
+
+curl ${URL}/api/${USER}/schedules/$1
+echo -e "\n"

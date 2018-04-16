@@ -1,0 +1,9 @@
+#!/bin/bash
+
+SCRIPT_HOME="."
+source ${SCRIPT_HOME}/setupEnv
+source ${SCRIPT_HOME}/jsonFormatter
+
+output=$(curl -sX "GET" ${URL}/api/${USER}/lights/$1)
+
+formatJson "$output"
